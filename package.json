@@ -1,0 +1,23 @@
+{
+  "name": "0api",
+  "version": "1.0.0",
+  "description": "express api server to render single json object",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeroywking/0api.git"
+  },
+  "author": "leeroywking@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leeroywking/0api/issues"
+  },
+  "homepage": "https://github.com/leeroywking/0api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

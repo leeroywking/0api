@@ -1,16 +1,15 @@
-'use strict'
+'use strict';
 
 const express = require('express');
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 const app = express();
 
+const jsonObject = { hello: 'world' };
 
-const jsonObject = {"hello":"world"}
-
-function reply(req,res){
-    res.send(JSON.stringify(jsonObject))
+function reply(req, res) {
+  res.send(JSON.stringify(jsonObject));
 }
 
-app.get('/', reply)
+app.get('/', reply);
 
-app.listen(PORT)
+app.listen(PORT);

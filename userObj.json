@@ -1,0 +1,27 @@
+{
+    "user": "alias",
+    "managementHeirarchy": [
+      {
+        "alias": "directManageralias",
+        "fullName": "Manager Person"
+      },
+      {
+        "alias": "skipLevelAlias",
+        "fullName": "Supervisor Person"
+      },
+      {
+        "alias": "jeff",
+        "fullName": "Jeff Bezos"
+      }
+    ],
+    "directReports": [
+      {
+        "alias": "firstreportAlias",
+        "fullName": "Person McFace"
+      },
+      {
+        "alias": "secondreportAlias",
+        "fullName": "Human McAfee"
+      }
+    ]
+  }

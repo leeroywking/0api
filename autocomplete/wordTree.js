@@ -59,7 +59,9 @@ function searchForWordsInTree(tree, limit = 50) {
     // this should create a depth first search of the data
     // one of the paths could be 'word' but that shouldn't be a problem since it has no properties
     else if (tree[paths[i]] && (results.length <= limit)) {
-      searchForWordsInTree(tree[paths[i]]).forEach(word => results.push(word))
+      searchForWordsInTree(tree[paths[i]]).forEach(word => {
+        if(results.length <= limit){results.push(word)}
+      })
     };
 
   }

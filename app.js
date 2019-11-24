@@ -18,6 +18,7 @@ function peopleHandler(req, res) {
 }
 
 function autocomplete(req,res){
+  console.log('hit the autocomplete route')
   let partialWord = req.params.partial;
   let limit = req.params.limit;
   let wordList = masterTree.returnWordsFromPartial(partialWord, limit)
@@ -27,6 +28,7 @@ function autocomplete(req,res){
 app.get('/', reply);
 app.get('/peopleObject', peopleHandler);
 app.post('/peopleObject', peopleHandler);
+app.get('/autocomplete/:partial', autocomplete)
 app.get('/autocomplete/:partial/:limit', autocomplete);
 
 app.listen(PORT);

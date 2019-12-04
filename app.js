@@ -26,9 +26,9 @@ function autocomplete(req,res){
 }
 
 function belleRoute(req,res){
-  let output = newBelle();
-  console.log(`returning ${output} to /newBelle`)
-  res.send(output)
+  let randBelle = newBelle();
+  console.log(`returning ${randBelle} to /newBelle`)
+  res.send({randBelle})
 }
 
 app.get('/', reply);

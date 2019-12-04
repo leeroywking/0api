@@ -1,6 +1,6 @@
 'use strict'
 
-const mirabelle = require('./mirabellList.js')
+const mirabelle = require('./mirabelleList.js')
 
 
 Array.prototype.random = function(){

@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const masterTree = require('./autocomplete/wordTree.js');
 const newBelle = require('./mirabelle/randMirabelle.js')
+const newBelleWithMatch = require('./mirabelle/regexRandMirabelle.js');
+
 
 const jsonObject = { hello: 'world' };
 const userObj = require('./userObj.json');
@@ -34,14 +36,8 @@ function belleRoute(req,res){
 function bellePartialRoute(req,res){
   let count = 0
   let partial = req.params.partial;
-  let randBelle = newBelle();
-  while(!randBelle.match(partial) && count < 100000){
-    count -=-1
-    randBelle = newBelle()
-  }
-  if(count >= 10000){res.send('no matches found in quick search')}
-  console.log(`returning ${randBelle} to /newBelle`)
-  res.send({randBelle})
+  let randBelle = newBelleWithMatch(partial);
+  res.status(200).send({randBelle})
 }
 
 app.get('/', reply);

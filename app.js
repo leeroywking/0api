@@ -31,10 +31,24 @@ function belleRoute(req,res){
   res.send({randBelle})
 }
 
+function bellePartialRoute(req,res){
+  let count = 0
+  let partial = req.params.partial;
+  let randBelle = newBelle();
+  while(!randBelle.match(partial) && count < 100000){
+    count -=-1
+    randBelle = newBelle()
+  }
+  if(count >= 10000){res.send('no matches found in quick search')}
+  console.log(`returning ${randBelle} to /newBelle`)
+  res.send({randBelle})
+}
+
 app.get('/', reply);
 app.get('/peopleObject', peopleHandler);
 app.post('/peopleObject', peopleHandler);
 app.get('/autocomplete/:partial', autocomplete)
 app.get('/autocomplete/:partial/:limit', autocomplete);
 app.get('/newBelle', belleRoute)
+app.get('/newBelle/:partial', bellePartialRoute)
 app.listen(PORT);

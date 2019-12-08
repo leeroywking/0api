@@ -6,7 +6,8 @@ const app = express();
 const masterTree = require('./autocomplete/wordTree.js');
 const newBelle = require('./mirabelle/randMirabelle.js')
 const newBelleWithMatch = require('./mirabelle/regexRandMirabelle.js');
-
+const cors = require('cors')
+app.use(cors())
 
 const jsonObject = { hello: 'world' };
 const userObj = require('./userObj.json');

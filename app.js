@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const morgan = require('morgan');
 const PORT = process.env.PORT || 3000;
 const app = express();
 const masterTree = require('./autocomplete/wordTree.js');
@@ -9,6 +10,11 @@ const newBelleWithMatch = require('./mirabelle/regexRandMirabelle.js');
 const brambleBotReply = require('./mirabelle/bramblebotreply.js')
 const cors = require('cors')
 app.use(cors())
+app.use(morgan('dev'));
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
 
 const jsonObject = { hello: 'world' };
 const userObj = require('./userObj.json');

@@ -6,6 +6,7 @@ const app = express();
 const masterTree = require('./autocomplete/wordTree.js');
 const newBelle = require('./mirabelle/randMirabelle.js')
 const newBelleWithMatch = require('./mirabelle/regexRandMirabelle.js');
+const brambleBotReply = require('./mirabelle/bramblebotreply.js')
 const cors = require('cors')
 app.use(cors())
 
@@ -41,11 +42,20 @@ function bellePartialRoute(req,res){
   res.status(200).send({randBelle})
 }
 
+function brambleBot(req, res){
+  console.log(req)
+  if(req.body.challenge){
+    res.send({"challenge":req.body.challenge})
+  }
+  brambleBotReply('this will be the reply')
+}
+
 app.get('/', reply);
 app.get('/peopleObject', peopleHandler);
 app.post('/peopleObject', peopleHandler);
 app.get('/autocomplete/:partial', autocomplete)
 app.get('/autocomplete/:partial/:limit', autocomplete);
-app.get('/newBelle', belleRoute)
-app.get('/newBelle/:partial', bellePartialRoute)
+app.get('/newBelle', belleRoute);
+app.get('/newBelle/:partial', bellePartialRoute);
+app.post('/bramblebot', brambleBot);
 app.listen(PORT);

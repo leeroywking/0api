@@ -54,6 +54,7 @@ function brambleBot(req, res){
   }
   console.log(req.body)
   // brambleBotReply('this will be the reply')
+  res.status(200).send('You are good mate')
 }
 
 app.get('/', reply);

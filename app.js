@@ -47,7 +47,7 @@ function brambleBot(req, res){
   if(req.body.challenge){
     res.send({"challenge":req.body.challenge})
   }
-  brambleBotReply('this will be the reply')
+  // brambleBotReply('this will be the reply')
 }
 
 app.get('/', reply);

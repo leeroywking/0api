@@ -49,10 +49,10 @@ function bellePartialRoute(req,res){
 }
 
 function brambleBot(req, res){
-  console.log(req)
   if(req.body.challenge){
     res.send({"challenge":req.body.challenge})
   }
+  console.log(req.body)
   // brambleBotReply('this will be the reply')
 }
 

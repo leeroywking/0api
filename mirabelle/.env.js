@@ -1,1 +1,1 @@
-module.exports = {webhook: 'garagejlkasglg', oath:'asdlifhadslkjfhalskjdfh'}
+module.exports = {webhook: 'garagejlkasglg', oath:'xoxb-601537689477-978409776807-ARSFnWoRRNfWWgQ6QzbHfwZY'}

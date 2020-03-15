@@ -50,10 +50,10 @@ function bellePartialRoute(req,res){
 
 function brambleBot(req, res){
   if(req.body.challenge){
-    res.send({"challenge":req.body.challenge})
+    res.send({ "challenge": req.body.challenge })
   }
   console.log(req.body)
-  brambleBotReply(`hey! ${newBelle()}`)
+  brambleBotReply(req.body.event.channel, `hey! ${newBelle()}`)
   res.send('You are good mate')
 }
 

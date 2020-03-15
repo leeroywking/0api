@@ -53,7 +53,7 @@ function brambleBot(req, res){
     res.send({"challenge":req.body.challenge})
   }
   console.log(req.body)
-  brambleBotReply(`Today she is ${newBelle()}`)
+  brambleBotReply(`Today she is ${newBelle()}`, req.body.event.channel)
   res.send('You are good mate')
 }
 

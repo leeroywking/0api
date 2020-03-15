@@ -1,6 +1,5 @@
 'use strict'
 const superagent = require('superagent');
-const webhook = process.env.webhook || require('./.env.js').webhook;
 const slackbottoken = process.env.oauth || require('./.env.js').oath;
 
 const getEndpoint = (args) => {

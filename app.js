@@ -54,7 +54,7 @@ function brambleBot(req, res){
   }
   console.log(req.body)
   let newBeller = newBelle().split('')
-  newBeller[0] = newBelle[0].toUpperCase()
+  newBeller[0] = newBeller[0].toUpperCase()
   newBeller = newBeller.join('')
   brambleBotReply(`Today she is ${newBeller}`, req.body.event.channel)
   res.send('You are good mate')

@@ -68,4 +68,7 @@ app.get('/autocomplete/:partial/:limit', autocomplete);
 app.get('/newBelle', belleRoute);
 app.get('/newBelle/:partial', bellePartialRoute);
 app.post('/bramblebot', brambleBot);
+app.post('/apicheck', (req,res) => res.status(200).send(req.body))
+console.log("listening on:",PORT)
 app.listen(PORT);
+

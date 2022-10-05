@@ -79,6 +79,7 @@ app.get('/newBelle/:partial', bellePartialRoute);
 app.post('/bramblebot', brambleBot);
 app.post('/apicheck', (req,res) => res.status(200).send(req.body))
 app.get('/190c6b9d-02a5-40ef-873c-6b74f033378b', iphoneCheck)
+app.get('/cc075dde-4502-11ed-b878-0242ac120002', iphoneCheck)
 console.log("listening on:",PORT)
 app.listen(PORT);
 

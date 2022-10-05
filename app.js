@@ -63,7 +63,7 @@ function brambleBot(req, res){
 
 
 function iphoneCheck(req,res){
-  console.error("Spicy QR code request came in from:",req.socket.remoteAddress)
+  console.error("------------------------Spicy QR code request came in from:",req.socket.remoteAddress)
 
   res.send("<h1>I told you not to!</h1>")
 }

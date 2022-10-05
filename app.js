@@ -18,6 +18,7 @@ app.use(express.urlencoded({extended:true}));
 
 const jsonObject = { hello: 'world' };
 const userObj = require('./userObj.json');
+const { reduce } = require('./mirabelle/mirabelleList.js');
 
 function reply(req, res) {
   res.send(jsonObject);
@@ -60,6 +61,14 @@ function brambleBot(req, res){
   res.send('You are good mate')
 }
 
+
+function iphoneCheck(req,res){
+  console.error("Spicy QR code request came in from:",req.socket.remoteAddress)
+
+  res.send("<h1>I told you not to!</h1>")
+}
+
+
 app.get('/', reply);
 app.get('/peopleObject', peopleHandler);
 app.post('/peopleObject', peopleHandler);
@@ -69,6 +78,7 @@ app.get('/newBelle', belleRoute);
 app.get('/newBelle/:partial', bellePartialRoute);
 app.post('/bramblebot', brambleBot);
 app.post('/apicheck', (req,res) => res.status(200).send(req.body))
+app.get('/190c6b9d-02a5-40ef-873c-6b74f033378b', iphoneCheck)
 console.log("listening on:",PORT)
 app.listen(PORT);
 
